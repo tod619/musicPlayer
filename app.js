@@ -13,3 +13,21 @@ const progressContainer = document.getElementById('progress_container');
 
 const title = document.getElementById('title');
 const cover = document.getElementById('cover');
+
+// song titles
+const songs = ['hey', 'summer', 'ukulele'];
+
+// Keep track of song
+let songIndex = 2;
+
+// Initially load song details into DOM
+loadSong(songs[songIndex]);
+
+// Functions
+
+// Update song details
+function loadSong(song) {
+    title.innerText = song;
+    audio.src = `music/${song}.mp3`;
+    cover.src = `images/${song}.jpg`;
+}

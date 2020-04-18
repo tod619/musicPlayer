@@ -67,7 +67,7 @@ function prevSong() {
 function nextSong() {
 	songIndex++;
 
-	if (songIndex > songs.length - 2) {
+	if (songIndex > songs.length - 1) {
 		songIndex = 0;
 	}
 
@@ -89,3 +89,6 @@ playBtn.addEventListener('click', () => {
 
 prevBtn.addEventListener('click', prevSong);
 nextBtn.addEventListener('click', nextSong);
+
+// Time Song Update
+audio.addEventListener('timeupdate', updateProgress);

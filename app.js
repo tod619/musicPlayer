@@ -31,3 +31,26 @@ function loadSong(song) {
     audio.src = `music/${song}.mp3`;
     cover.src = `images/${song}.jpg`;
 }
+
+// Play song
+function playSong() {
+    musicContainer.classList.add('play');
+    playBtn.querySelector('i.fas').classList.remove('fa-play');
+    playBtn.querySelector('i.fas').classList.add('fa-pause');
+
+    audio.play();
+}
+
+// Pause song
+
+
+// EventListners
+playBtn.addEventListener('click', () => {
+    const isPlaying = musicContainer.classList.contains('play');
+
+    if (isPlaying) {
+        pauseSong();
+    } else {
+        playSong();
+    }
+});

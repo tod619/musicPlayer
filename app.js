@@ -64,7 +64,17 @@ function prevSong() {
 }
 
 // Next Song Function
-function nextSong() {}
+function nextSong() {
+	songIndex++;
+
+	if (songIndex > songs.length - 2) {
+		songIndex = 0;
+	}
+
+	loadSong(songs[songIndex]);
+
+	playSong();
+}
 
 // EventListners
 playBtn.addEventListener('click', () => {
